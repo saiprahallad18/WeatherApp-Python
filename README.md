@@ -1,94 +1,99 @@
+---
+
+```markdown
 # 🌦️ Thinker Weather
 
-A simple, tinker-friendly Python weather app that works both in **CLI** and **GUI** modes.  
-It uses the [OpenWeatherMap API](https://openweathermap.org/api) to fetch real-time weather and 3-day forecasts, with a lightweight JSON cache to reduce API calls.
+A simple, tinker-friendly Python weather app that works in both **CLI** and **GUI** modes.  
+It uses the [OpenWeatherMap API](https://openweathermap.org/api) to fetch real-time weather and 3-day forecasts, with a local JSON cache to reduce API calls.
 
+---
 
 ## 🚀 Features
+- 🧠 Reusable `WeatherAPI` class with caching and error handling  
+- 💻 Command-line interface (CLI) for quick access  
+- 🪟 Desktop GUI using Tkinter  
+- 🗂️ JSON file cache to avoid redundant requests  
+- 🌍 Supports different units and languages  
 
-- 🧠 Reusable `WeatherAPI` wrapper (handles caching, errors, and normalization)
-- 💻 Command-line interface (CLI) with neat text formatting
-- 🪟 Desktop GUI using `Tkinter`
-- 🗂️ Local JSON cache to reduce repeated API requests
-- 🌍 Supports different units and languages via OpenWeatherMap parameters
-
-
+---
 
 ## 📁 Project Structure
-
+```
 
 .
-├── weather_api.py   # API wrapper + caching logic
-├── gui.py           # Tkinter desktop app
-├── cli.py           # Command-line interface
-├── weather_cache.json  # Auto-generated cache file
+├── weather_api.py        # API wrapper + caching logic
+├── gui.py                # Tkinter desktop app
+├── cli.py                # Command-line interface
+├── weather_cache.json    # Auto-created cache file
 └── README.md
 
+````
+
+---
 
 ## 🧰 Requirements
-
 **Python 3.8+** is recommended.
 
-### Install dependencies:
-bash
+Install dependencies:
+```bash
 pip install requests python-dateutil
+````
 
-
-
+---
 
 ## 🔑 Setup
 
-1. Get your **OpenWeatherMap API key**:
-   → [https://home.openweathermap.org/users/sign_up](https://home.openweathermap.org/users/sign_up)
+1. Get a free **OpenWeatherMap API key**:
+   [https://home.openweathermap.org/users/sign_up](https://home.openweathermap.org/users/sign_up)
 
 2. Set it as an environment variable:
 
-   bash
+   ```bash
    export OWM_API_KEY="your_api_key_here"   # macOS / Linux
    setx OWM_API_KEY "your_api_key_here"     # Windows (PowerShell)
-   
+   ```
 
+---
 
+## 🖥️ GUI Usage
 
-## 🧩 Usage
+Run the GUI version:
 
-### 🖥️ GUI Mode
-
-Run the Tkinter app:
-
-bash
+```bash
 python gui.py
-
+```
 
 Enter a city name (e.g., `Hyderabad,IN`) and click **Get Weather**
-to see current conditions and a 3-day forecast.
+to see current weather and a 3-day forecast.
 
-### 🧾 CLI Mode
+---
 
-Run the app from your terminal:
+## 💻 CLI Usage
 
-bash
+Run the app from the terminal:
+
+```bash
 python cli.py "Bengaluru,IN"
+```
 
+Optional flags:
 
-Add flags:
-
-bash
---no-forecast    # Fetch only current weather
---key YOUR_KEY   # Provide API key directly (optional)
-
+```bash
+--no-forecast    # Skip forecast
+--key YOUR_KEY   # Provide API key directly
+```
 
 Example:
 
-bash
+```bash
 python cli.py "London" --no-forecast
+```
 
+---
 
+## 📊 Example Output (CLI)
 
-
-## 🧠 Example Output (CLI)
-
-
+```
 Weather for: Hyderabad, IN
   Clear sky
   Temp: 30.2° (feels like 33.0°)
@@ -99,38 +104,43 @@ Weather for: Hyderabad, IN
   2025-10-18: Clouds, 28° — 33°, wind avg 3.1 m/s
   2025-10-19: Rain, 25° — 31°, wind avg 4.2 m/s
   2025-10-20: Clear, 26° — 32°, wind avg 3.5 m/s
+```
 
+---
 
-
-
-## 🧩 Technical Details
+## ⚙️ Technical Details
 
 * **Cache TTL:** 5 minutes
 * **Cache file:** `weather_cache.json`
-* **Endpoints used:**
+* **API endpoints:**
 
   * `/data/2.5/weather`
   * `/data/2.5/forecast`
 
+---
 
+## 🧩 Error Handling
 
-## 🐞 Error Handling
+If something goes wrong (invalid city, network issue, API failure):
 
-If the API fails or network is unavailable, the app will:
+* A `WeatherAPIError` is raised
+* GUI shows a popup error message
+* CLI prints a clear error message
 
-* Raise a `WeatherAPIError`
-* Display a friendly error popup (in GUI) or print a message (in CLI)
+---
 
-
-
-## 🧑‍💻 Author
+## 👨‍💻 Author
 
 **Sai Prahallad**
 Built with Python, curiosity, and a bit of cloud data ☁️
 
-
+---
 
 ## 📜 License
 
-This project is open-source and available under the **MIT License**.
+This project is open source under the **MIT License**.
 
+```
+
+---
+```
