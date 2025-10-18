@@ -145,8 +145,3 @@ You may:
 - Distribute it freely  
 
 This software is provided *as is*, without any warranty or guarantee of fitness for a particular purpose.
-
-```
-
----
-```
