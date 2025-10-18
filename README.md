@@ -134,9 +134,17 @@ Built with Python, curiosity, and a bit of cloud data ☁️
 
 ---
 
-## 📜 License
+## 🆓 License
 
-This project is open source under the **MIT License**.
+This project is **free to use, modify, and share** for any purpose — personal, educational, or commercial.  
+No attribution is required, but it’s always appreciated if you mention the original author.
+
+You may:
+- Use this code in your own projects  
+- Modify or extend it  
+- Distribute it freely  
+
+This software is provided *as is*, without any warranty or guarantee of fitness for a particular purpose.
 
 ```
 
