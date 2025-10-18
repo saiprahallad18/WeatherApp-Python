@@ -1,6 +1,4 @@
 ---
-
-```markdown
 # 🌦️ Thinker Weather
 
 A simple, tinker-friendly Python weather app that works in both **CLI** and **GUI** modes.  
